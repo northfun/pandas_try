@@ -48,11 +48,11 @@ print(impPriceACounts)
 
 print(impPriceBCounts)
 
-abImpCounts = pd.merge(impPriceACounts, impPriceBCounts, how="left")
-abImpCounts.shape
-abImpCounts.unstack().plot()
+abImpCounts = pd.merge(impPriceACounts, impPriceBCounts, how="left",left_index=True,right_index=True)
 
-#print(abImpCounts)
+print(abImpCounts)
+
+abImpCounts.unstack.groupby("date_time")["model_ver"].sum()
 # df = pd.DataFrame(np.random.randn(1000, 4), index=pd.date_range('1/1/2000', periods=1000), columns=list('ABCD'))
 # df = df.cumsum()
 # df.plot()
